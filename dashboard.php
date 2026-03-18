@@ -180,7 +180,7 @@ $user_photo = !empty($user['profile_pic']) ? $user['profile_pic'] : 'uploads/def
         <a onclick="showView('reports')" id="link-reports">Reports</a>
         <a onclick="showView('timeclock')" id="link-timeclock">Clocking</a>
         <a id="link-messages" onclick="showView('messages')">
-            <i class="fas fa-comment-dots"></i> Messages 
+            <i class="fas fa-comment-dots"></i> Messaging
             <?php if($unread_msg > 0): ?><span style="background:white; color:#6366f1; padding:2px 8px; border-radius:10px; font-size:0.7rem; margin-left:auto;"><?= $unread_msg ?></span><?php endif; ?>
         </a>
         <a href="profile.php">Settings</a>
