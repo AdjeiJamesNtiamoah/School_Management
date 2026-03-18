@@ -1,0 +1,377 @@
+/* GLOBAL DESIGN SYSTEM */
+:root {
+    --bg: #020617; 
+    --sidebar: #0f172a; 
+    --panel: #1e293b;
+    --accent: linear-gradient(135deg, #a855f7 0%, #6366f1 100%);
+    --text: #f8fafc; 
+    --muted: #94a3b8; 
+    --border: rgba(255,255,255,0.06);
+    --danger: #f43f5e; 
+    --success: #10b981;
+}
+
+/* DASHBOARD LAYOUT */
+.glass-card { 
+    background: var(--panel); 
+    border: 1px solid var(--border); 
+    border-radius: 24px; 
+    padding: 2rem; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2); 
+}
+
+/* OVERVIEW HEALTH PILLS */
+.health-pill { 
+    background: var(--panel); 
+    padding: 8px 16px; 
+    border-radius: 50px; 
+    font-size: 0.75rem; 
+    color: var(--muted); 
+    display: flex; 
+    align-items: center; 
+    font-weight: 700; 
+}
+
+.dot { width: 8px; height: 8px; border-radius: 50%; margin-right: 8px; }
+.pulse-green { background: var(--success); box-shadow: 0 0 8px var(--success); }
+.pulse-purple { background: #a855f7; box-shadow: 0 0 8px #a855f7; }
+
+/* ACTION ROWS */
+.action-row { 
+    width: 100%; text-align: left; background: transparent; border: 1px solid var(--border); 
+    padding: 15px; border-radius: 12px; color: white; cursor: pointer; margin-bottom: 10px;
+    display: flex; flex-direction: column; transition: 0.2s;
+}
+.action-row:hover { background: rgba(255,255,255,0.05); border-color: #a855f7; }
+
+/* CHAT BUBBLES (WhatsApp Style) */
+.bubble {
+    max-width: 65%;
+    padding: 8px 12px;
+    border-radius: 8px;
+    margin-bottom: 4px;
+    font-size: 0.92rem;
+}
+.bubble-sent { background: #005c4b; color: #e9edef; align-self: flex-end; }
+.bubble-received { background: #202c33; color: #e9edef; align-self: flex-start; }
+/* Container for the stream */
+.message-stream {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+/* Row alignment */
+.message-row { display: flex; width: 100%; margin-bottom: 10px; }
+.row-right { justify-content: flex-end; }
+.row-left { justify-content: flex-start; }
+
+/* Bubble styling */
+.bubble {
+    max-width: 70%;
+    padding: 10px 15px;
+    border-radius: 12px;
+    position: relative;
+    color: white;
+}
+.bubble-sent { background: #005c4b; border-bottom-right-radius: 2px; }
+.bubble-received { background: #202c33; border-bottom-left-radius: 2px; }
+.chat-attachment img {
+    transition: transform 0.2s;
+    cursor: zoom-in;
+}
+.chat-attachment img:hover {
+    transform: scale(1.02);
+}
+
+.chat-container {
+    display: flex;
+    height: 700px;
+    padding: 0 !important;
+    overflow: hidden;
+    background: #0f172a;
+}
+
+.chat-sidebar {
+    width: 320px;
+    border-right: 1px solid rgba(255,255,255,0.05);
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-header {
+    padding: 25px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-count {
+    background: #8b5cf6;
+    padding: 2px 10px;
+    border-radius: 10px;
+    font-size: 0.7rem;
+}
+
+.contact-item {
+    display: flex;
+    padding: 15px 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-left: 3px solid transparent;
+}
+
+.contact-item:hover { background: rgba(255,255,255,0.03); }
+.contact-item.active { 
+    background: rgba(139, 92, 246, 0.1); 
+    border-left-color: #8b5cf6; 
+}
+
+.avatar {
+    width: 45px; height: 45px;
+    background: linear-gradient(135deg, #a855f7, #6366f1);
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: bold; color: white; flex-shrink: 0;
+}
+
+.contact-info { flex: 1; margin-left: 15px; overflow: hidden; }
+.contact-top { display: flex; justify-content: space-between; align-items: center; }
+.contact-name { font-weight: 600; font-size: 0.95rem; color: #f8fafc; }
+.contact-time { font-size: 0.7rem; color: #64748b; }
+
+.contact-bottom { display: flex; justify-content: space-between; align-items: center; margin-top: 5px; }
+.last-message { 
+    font-size: 0.8rem; color: #94a3b8; 
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis; 
+    margin: 0; max-width: 180px;
+}
+
+.unread-badge {
+    background: #ef4444; color: white;
+    font-size: 0.65rem; padding: 2px 7px; border-radius: 10px; font-weight: bold;
+}
+
+/* Chat Input Styling */
+.chat-input-area { padding: 15px 25px; background: #1e293b; display: flex; gap: 15px; align-items: center; }
+#msgText { 
+    flex: 1; background: #0f172a; border: 1px solid rgba(255,255,255,0.1); 
+    padding: 12px 20px; border-radius: 30px; color: white; outline: none;
+}
+.send-btn { background: #8b5cf6; color: white; border: none; padding: 10px 25px; border-radius: 30px; cursor: pointer; }
+.chat-container { display: flex; height: 650px; background: #0b141a; border-radius: 15px; overflow: hidden; }
+.chat-sidebar { width: 300px; border-right: 1px solid rgba(255,255,255,0.05); display: flex; flex-direction: column; }
+.contact-item { display: flex; align-items: center; padding: 15px; cursor: pointer; transition: 0.2s; }
+.contact-item:hover { background: rgba(255,255,255,0.05); }
+.avatar { width: 40px; height: 40px; border-radius: 10px; background: #8b5cf6; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0; }
+.contact-info { flex: 1; margin-left: 12px; overflow: hidden; }
+.contact-top { display: flex; justify-content: space-between; align-items: center; }
+.contact-name { font-weight: 700; color: white; font-size: 0.9rem; }
+.last-message { font-size: 0.75rem; color: #94a3b8; margin: 4px 0 0 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.chat-img-preview { max-width: 100%; border-radius: 8px; margin-bottom: 5px; display: block; }
+
+/* Fix for the overall layout */
+.chat-container {
+    display: flex;
+    width: 100%;
+    height: 700px;
+    background: #0b141a;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+
+.chat-main-area {
+    flex: 1; /* Takes up remaining space */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Ensure the contact info doesn't wrap awkwardly */
+.contact-info {
+    flex: 1;
+    margin-left: 12px;
+    min-width: 0; /* Important for text truncation */
+}
+
+.contact-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.last-message {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 4px 0 0 0;
+    font-size: 0.8rem;
+    color: var(--muted);
+}
+.contact-item {
+    transition: all 0.2s ease;
+}
+
+#contactSearch:focus {
+    border-color: #8b5cf6 !important;
+    box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.2);
+}
+
+/* Ensure these are in your style.css for both dashboards */
+.chat-container { display: flex; height: 650px; background: #0b141a; border-radius: 15px; overflow: hidden; }
+.chat-sidebar { width: 300px; border-right: 1px solid rgba(255,255,255,0.05); display: flex; flex-direction: column; }
+.chat-main-area { flex: 1; display: flex; flex-direction: column; background: #0b141a; }
+.contact-item.active { background: rgba(139, 92, 246, 0.1); border-left: 3px solid #8b5cf6; }
+
+/* Fix for the messaging view container */
+#view-messages.active {
+    display: flex !important;
+    height: 80vh; /* Prevents it from overlapping other elements */
+    margin-top: 20px;
+}
+
+.chat-container {
+    display: flex; /* Forces sidebar left, chat right */
+    flex: 1;
+    background: #0b141a;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+}
+
+.chat-sidebar {
+    width: 300px; /* FIXED WIDTH to prevent squashing */
+    flex-shrink: 0;
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+}
+
+
+.admin-messaging-wrapper {
+    display: flex;
+    height: calc(100vh - 160px); /* Adjust based on your header height */
+    background: #0f172a;
+    border-radius: 15px;
+    border: 1px solid #1e293b;
+    overflow: hidden;
+}
+
+.admin-chat-sidebar {
+    width: 280px; /* Fixed width for the Support Inbox */
+    border-right: 1px solid #1e293b;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+.sidebar-header {
+    padding: 20px;
+    border-bottom: 1px solid #1e293b;
+}
+
+.scrollable-contacts {
+    flex: 1;
+    overflow-y: auto; /* Scroll only inside the sidebar */
+}
+
+/* Individual Contact Item */
+.contact-card {
+    padding: 15px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.contact-card:hover {
+    background: rgba(139, 92, 246, 0.1);
+}
+
+.admin-chat-window {
+    flex: 1; /* Takes up the rest of the space */
+    display: flex;
+    flex-direction: column;
+    background: #0b141a;
+}
+
+
+/* This ensures the sidebar container allows vertical stacking */
+#adminContactList {
+    display: flex;
+    flex-direction: column !important; /* Forces vertical list */
+    width: 100%;
+    overflow-y: auto;
+}
+
+/* This fixes the individual contact items */
+.contact-item {
+    display: flex;
+    flex-direction: row; /* Content inside the item stays side-by-side */
+    align-items: center;
+    width: 100%;
+    padding: 12px 15px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    box-sizing: border-box; /* Prevents leaking outside width */
+}
+
+
+/* FIX FOR THE HORIZONTAL CRUSHING ISSUE */
+.admin-messaging-wrapper {
+    display: flex !important;
+    flex-direction: row !important; /* Forces side-by-side */
+    height: 700px; /* Or calc(100vh - 200px) */
+    width: 100%;
+    background: #0f172a;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.admin-chat-sidebar {
+    width: 300px !important; /* Solid width for contacts */
+    min-width: 300px;
+    flex-shrink: 0; /* Prevents sidebar from being crushed */
+    border-right: 1px solid #1e293b;
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-chat-window {
+    flex-grow: 1; /* Takes up all remaining space */
+    display: flex;
+    flex-direction: column;
+    background: #0b141a;
+}
+
+.stat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.stat-card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    padding: 1.5rem;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    transition: transform 0.2s;
+}
+
+.stat-card:hover { transform: translateY(-5px); }
+
+.stat-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.stat-label { color: var(--muted); font-size: 0.8rem; font-weight: 500; }
+.stat-value { font-size: 1.5rem; font-weight: 800; color: white; }
+
