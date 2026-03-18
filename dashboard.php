@@ -27,7 +27,7 @@ $user_photo = !empty($user['profile_pic']) ? $user['profile_pic'] : 'uploads/def
 <html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
-    <title>Management | Flaw</title>
+    <title>Management | Flawl</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
@@ -178,7 +178,7 @@ $user_photo = !empty($user['profile_pic']) ? $user['profile_pic'] : 'uploads/def
         <a onclick="showView('students')" id="link-students">Students</a>
         <a onclick="showView('attendance')" id="link-attendance">Attendance</a>
         <a onclick="showView('reports')" id="link-reports">Reports</a>
-        <a onclick="showView('timeclock')" id="link-timeclock">Timeclock</a>
+        <a onclick="showView('timeclock')" id="link-timeclock">Clocking</a>
         <a id="link-messages" onclick="showView('messages')">
             <i class="fas fa-comment-dots"></i> Messages 
             <?php if($unread_msg > 0): ?><span style="background:white; color:#6366f1; padding:2px 8px; border-radius:10px; font-size:0.7rem; margin-left:auto;"><?= $unread_msg ?></span><?php endif; ?>
